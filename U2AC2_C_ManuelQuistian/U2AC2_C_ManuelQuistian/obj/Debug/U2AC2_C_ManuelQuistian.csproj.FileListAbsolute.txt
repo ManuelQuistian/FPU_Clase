@@ -1,0 +1,8 @@
+C:\Users\marti\source\repos\U2AC2_C_ManuelQuistian\U2AC2_C_ManuelQuistian\bin\Debug\U2AC2_C_ManuelQuistian.exe.config
+C:\Users\marti\source\repos\U2AC2_C_ManuelQuistian\U2AC2_C_ManuelQuistian\bin\Debug\U2AC2_C_ManuelQuistian.exe
+C:\Users\marti\source\repos\U2AC2_C_ManuelQuistian\U2AC2_C_ManuelQuistian\bin\Debug\U2AC2_C_ManuelQuistian.pdb
+C:\Users\marti\source\repos\U2AC2_C_ManuelQuistian\U2AC2_C_ManuelQuistian\obj\Debug\U2AC2_C_ManuelQuistian.csproj.AssemblyReference.cache
+C:\Users\marti\source\repos\U2AC2_C_ManuelQuistian\U2AC2_C_ManuelQuistian\obj\Debug\U2AC2_C_ManuelQuistian.csproj.SuggestedBindingRedirects.cache
+C:\Users\marti\source\repos\U2AC2_C_ManuelQuistian\U2AC2_C_ManuelQuistian\obj\Debug\U2AC2_C_ManuelQuistian.csproj.CoreCompileInputs.cache
+C:\Users\marti\source\repos\U2AC2_C_ManuelQuistian\U2AC2_C_ManuelQuistian\obj\Debug\U2AC2_C_ManuelQuistian.exe
+C:\Users\marti\source\repos\U2AC2_C_ManuelQuistian\U2AC2_C_ManuelQuistian\obj\Debug\U2AC2_C_ManuelQuistian.pdb
