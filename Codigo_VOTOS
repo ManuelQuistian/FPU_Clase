@@ -1,0 +1,472 @@
+using Microsoft.SqlServer.Server;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading;
+using System.Threading.Tasks;
+
+namespace Control_De_Flujo
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            //Programa de votaciones
+
+            //Variales a declarar
+            string nombre, condicionWhile;
+            string candidato;
+            int candidato1 = 0, candidato2 = 0, candidato3 = 0, candidato4 = 0, candidato5 = 0;
+            int numero = 0;
+
+            //Pedir Datos
+            //En este apartado el usuario tendra que ingresar nu nombre
+            Console.WriteLine("Por favor ingrese su nombre");
+            //En esta variable se guardara el nombre del usuario
+            nombre = Console.ReadLine();
+
+            //En este codigo se le avisara que acontinuacion se le mostrara la lista de candidatos a elejir
+            Console.WriteLine("Acontinuacion se le mostrara en pantalla la lista de candidatos");
+            //Este codigo tiene como funcion hacer que la consola haga una pausa antes de mostrar el siguiente codigo
+            Thread.Sleep(2000);
+
+            //En este codigo se le informara al usuario como debe ingresar el nombre dell candidato por el que votara
+            Console.WriteLine("Por favor elija su candidato a votar escribiendo tal y como se muestra en pantalla el candidato y numero");
+            //Este codigo tiene como funcion hacer que la consola haga una pausa antes de mostrar el siguiente codigo
+            Thread.Sleep(2000);
+
+            //En este codigo se mostraran los candidatos y a un lado su variable
+            Console.WriteLine("\t candidato1 \t candidato 2 \t candidato 3 \t candiadto 4 \t candidato 5");
+            //se guarda la respuesta del usuario en la variable candidato
+            candidato = Console.ReadLine().Trim();
+
+            //se guardan los votos del candidato
+            if (candidato == "candidato1")
+            {
+                candidato1++;
+            }
+            //se guardan los votos del candidato
+            else if (candidato == "candidato2")
+            {
+                candidato2++;
+            }
+            //se guardan los votos del candidato
+            else if (candidato == "candidato3")
+            {
+                candidato3++;
+            }
+            //se guardan los votos del candidato
+            else if (candidato == "candidato4")
+            {
+                candidato4++;
+            }
+            //se guardan los votos del candidato
+            else if (candidato == "candidato5")
+            {
+                candidato5++;
+            }
+
+            //Este codigo sirve para cambiar el color de consola
+            Console.BackgroundColor = ConsoleColor.Black;
+            //Este codigo sirve para cambiar el color de la letra de consola
+            Console.ForegroundColor = ConsoleColor.White;
+
+            //En este apartado mostrara en consola el nombre del usuario y el candidato que ah votado
+            Console.WriteLine("Usted:{0}, ah votado por el {1}", nombre, candidato);
+
+            //Este codigo sirve para qu eel usuario presione la tecla indicada
+            Console.WriteLine("Presione el numero 0 para verificar su voto y presione ENTER", numero);
+            //se guarda el numero que escribio el usuario
+            numero = Convert.ToInt32(Console.ReadLine());
+
+            //Este if sirve para que si el usuario presiona la tecla indicada le mande un True
+            if (numero <= 0)
+            {
+                Console.WriteLine("Usted ah confirmado su voto, presione ENTER para continuar");
+                Console.ReadLine();
+            }
+            //Este else sirve para que si el usuario no presiona la tecla indicada le mande un false y lo saque del sistema
+            else
+            {
+                //en este apartado se le informa al usuario que ah presionado la tecla incorrecta
+                Console.WriteLine("Ustes ah presionado la tecla incorrrecta, vuelva a realizar el proceso");
+                //Este codigo sirve para que la consola haga una pausa
+                Thread.Sleep(3000);
+                //Este codigo sirve para que despues de que le aparezca al usuario el error que cometio lo saque del sistema
+                return;
+            }
+
+            //Este codigo sirve para informarle al usuario que ah realizado correctamente lo indicado anteriormente
+            Console.WriteLine("Su {0} tiene su voto asegurado, presione ENTER para continuar", candidato);
+            candidato = Console.ReadLine();
+
+            //Sirve para informarle al usuario que debe presionar si o no
+            Console.WriteLine("Quiere votar de nuevo: SI o NO");
+            condicionWhile = Console.ReadLine();
+
+            #region Condicion While
+            while (condicionWhile == "SI" || condicionWhile == "Si" || condicionWhile == "si")
+            {
+                //En este codigo se le avisara que acontinuacion se le mostrara la lista de candidatos a elejir
+                Console.WriteLine("Acontinuacion se le mostrara de nuevo en pantalla la lista de candidatos");
+                //Este codigo tiene como funcion hacer que la consola haga una pausa antes de mostrar el siguiente codigo
+                Thread.Sleep(2000);
+
+                //En este codigo se le informara al usuario como debe ingresar el nombre dell candidato por el que votara
+                Console.WriteLine("Por favor elija su candidato a votar escribiendo tal y como se muestra en pantalla el candidato y numero");
+                //Este codigo tiene como funcion hacer que la consola haga una pausa antes de mostrar el siguiente codigo
+                Thread.Sleep(2000);
+
+                //En este codigo se mostraran los candidatos y a un lado su variable
+                Console.WriteLine("\t candidato1 \t candidato 2 \t candidato 3 \t candiadto 4 \t candidato 5");
+                candidato = Console.ReadLine().Trim();
+
+                if (candidato == "candidato1")
+                {
+                    //aqui se guardan los votos del candidato
+                    candidato1++;
+                }
+                else if (candidato == "candidato2")
+                {
+                    //aqui se guardan los votos del candidato
+                    candidato2++;
+                }
+                else if (candidato == "candidato3")
+                {
+                    //aqui se guardan los votos del candidato
+                    candidato3++;
+                }
+                else if (candidato == "candidato4")
+                {
+                    //aqui se guardan los votos del candidato
+                    candidato4++;
+                }
+                else if (candidato == "candidato5")
+                {
+                    //aqui se guardan los votos del candidato
+                    candidato5++;
+                }
+
+
+                Console.WriteLine("Quiere volver a votar: SI o NO");
+                condicionWhile = Console.ReadLine();
+
+                while (condicionWhile == "SI" || condicionWhile == "Si" || condicionWhile == "si")
+                {
+
+                    //En este codigo se le avisara que acontinuacion se le mostrara la lista de candidatos a elejir
+                    Console.WriteLine("Acontinuacion se le mostrara de nuevo en pantalla la lista de candidatos");
+                    //Este codigo tiene como funcion hacer que la consola haga una pausa antes de mostrar el siguiente codigo
+                    Thread.Sleep(2000);
+
+                    //En este codigo se le informara al usuario como debe ingresar el nombre dell candidato por el que votara
+                    Console.WriteLine("Por favor elija su candidato a votar escribiendo tal y como se muestra en pantalla el candidato y numero");
+                    //Este codigo tiene como funcion hacer que la consola haga una pausa antes de mostrar el siguiente codigo
+                    Thread.Sleep(2000);
+
+                    //En este codigo se mostraran los candidatos y a un lado su variable
+                    Console.WriteLine("\t candidato1 \t candidato 2 \t candidato 3 \t candiadto 4 \t candidato 5");
+                    candidato = Console.ReadLine().Trim();
+
+                    Console.WriteLine("Quiere volver a votar: SI o NO");
+                    condicionWhile = Console.ReadLine();
+                    while (condicionWhile == "SI" || condicionWhile == "Si" || condicionWhile == "si")
+                    {
+
+                        //En este codigo se le avisara que acontinuacion se le mostrara la lista de candidatos a elejir
+                        Console.WriteLine("Acontinuacion se le mostrara de nuevo en pantalla la lista de candidatos");
+                        //Este codigo tiene como funcion hacer que la consola haga una pausa antes de mostrar el siguiente codigo
+                        Thread.Sleep(2000);
+
+                        //En este codigo se le informara al usuario como debe ingresar el nombre dell candidato por el que votara
+                        Console.WriteLine("Por favor elija su candidato a votar escribiendo tal y como se muestra en pantalla el candidato y numero");
+                        //Este codigo tiene como funcion hacer que la consola haga una pausa antes de mostrar el siguiente codigo
+                        Thread.Sleep(2000);
+
+                        //En este codigo se mostraran los candidatos y a un lado su variable
+                        Console.WriteLine("\t candidato1 \t candidato 2 \t candidato 3 \t candiadto 4 \t candidato 5");
+                        candidato = Console.ReadLine().Trim();
+
+                        Console.WriteLine("Quiere volver a votar: SI o NO");
+                        condicionWhile = Console.ReadLine();
+
+                    }
+                    while (condicionWhile == "SI" || condicionWhile == "Si" || condicionWhile == "si")
+                    {
+
+                        //En este codigo se le avisara que acontinuacion se le mostrara la lista de candidatos a elejir
+                        Console.WriteLine("Acontinuacion se le mostrara de nuevo en pantalla la lista de candidatos");
+                        //Este codigo tiene como funcion hacer que la consola haga una pausa antes de mostrar el siguiente codigo
+                        Thread.Sleep(2000);
+
+                        //En este codigo se le informara al usuario como debe ingresar el nombre dell candidato por el que votara
+                        Console.WriteLine("Por favor elija su candidato a votar escribiendo tal y como se muestra en pantalla el candidato y numero");
+                        //Este codigo tiene como funcion hacer que la consola haga una pausa antes de mostrar el siguiente codigo
+                        Thread.Sleep(2000);
+
+                        //En este codigo se mostraran los candidatos y a un lado su variable
+                        Console.WriteLine("\t candidato1 \t candidato 2 \t candidato 3 \t candiadto 4 \t candidato 5");
+                        candidato = Console.ReadLine().Trim();
+
+                        Console.WriteLine("Quiere volver a votar: SI o NO");
+                        //Sirve para que el resultado se guarde en la variable y la condicion haga su trabajo
+                        condicionWhile = Console.ReadLine();
+
+                    }
+                    while (condicionWhile == "SI" || condicionWhile == "Si" || condicionWhile == "si")
+                    {
+
+                        //En este codigo se le avisara que acontinuacion se le mostrara la lista de candidatos a elejir
+                        Console.WriteLine("Acontinuacion se le mostrara de nuevo en pantalla la lista de candidatos");
+                        //Este codigo tiene como funcion hacer que la consola haga una pausa antes de mostrar el siguiente codigo
+                        Thread.Sleep(2000);
+
+                        //En este codigo se le informara al usuario como debe ingresar el nombre dell candidato por el que votara
+                        Console.WriteLine("Por favor elija su candidato a votar escribiendo tal y como se muestra en pantalla el candidato y numero");
+                        //Este codigo tiene como funcion hacer que la consola haga una pausa antes de mostrar el siguiente codigo
+                        Thread.Sleep(2000);
+
+                        //En este codigo se mostraran los candidatos y a un lado su variable
+                        Console.WriteLine("\t candidato1 \t candidato 2 \t candidato 3 \t candiadto 4 \t candidato 5");
+                        candidato = Console.ReadLine().Trim();
+
+                        Console.WriteLine("Quiere volver a votar: SI o NO");
+                        //Sirve para que el resultado se guarde en la variable y la condicion haga su trabajo
+                        condicionWhile = Console.ReadLine();
+
+                    }
+                    while (condicionWhile == "SI" || condicionWhile == "Si" || condicionWhile == "si")
+                    {
+
+                        //En este codigo se le avisara que acontinuacion se le mostrara la lista de candidatos a elejir
+                        Console.WriteLine("Acontinuacion se le mostrara de nuevo en pantalla la lista de candidatos");
+                        //Este codigo tiene como funcion hacer que la consola haga una pausa antes de mostrar el siguiente codigo
+                        Thread.Sleep(2000);
+
+                        //En este codigo se le informara al usuario como debe ingresar el nombre dell candidato por el que votara
+                        Console.WriteLine("Por favor elija su candidato a votar escribiendo tal y como se muestra en pantalla el candidato y numero");
+                        //Este codigo tiene como funcion hacer que la consola haga una pausa antes de mostrar el siguiente codigo
+                        Thread.Sleep(2000);
+
+                        //En este codigo se mostraran los candidatos y a un lado su variable
+                        Console.WriteLine("\t candidato1 \t candidato 2 \t candidato 3 \t candiadto 4 \t candidato 5");
+                        candidato = Console.ReadLine().Trim();
+
+                        Console.WriteLine("Quiere volver a votar: SI o NO");
+                        //Sirve para que el resultado se guarde en la variable y la condicion haga su trabajo
+                        condicionWhile = Console.ReadLine();
+
+                    }
+                    while (condicionWhile == "SI" || condicionWhile == "Si" || condicionWhile == "si")
+                    {
+
+                        //En este codigo se le avisara que acontinuacion se le mostrara la lista de candidatos a elejir
+                        Console.WriteLine("Acontinuacion se le mostrara de nuevo en pantalla la lista de candidatos");
+                        //Este codigo tiene como funcion hacer que la consola haga una pausa antes de mostrar el siguiente codigo
+                        Thread.Sleep(2000);
+
+                        //En este codigo se le informara al usuario como debe ingresar el nombre dell candidato por el que votara
+                        Console.WriteLine("Por favor elija su candidato a votar escribiendo tal y como se muestra en pantalla el candidato y numero");
+                        //Este codigo tiene como funcion hacer que la consola haga una pausa antes de mostrar el siguiente codigo
+                        Thread.Sleep(2000);
+
+                        //En este codigo se mostraran los candidatos y a un lado su variable
+                        Console.WriteLine("\t candidato1 \t candidato 2 \t candidato 3 \t candiadto 4 \t candidato 5");
+                        candidato = Console.ReadLine().Trim();
+                        //Sirve para mostrar en consola
+                        Console.WriteLine("Quiere volver a votar: SI o NO");
+                        //Sirve para que el resultado se guarde en la variable y la condicion haga su trabajo
+                        condicionWhile = Console.ReadLine();
+
+                    }
+                    while (condicionWhile == "SI" || condicionWhile == "Si" || condicionWhile == "si")
+                    {
+
+                        //En este codigo se le avisara que acontinuacion se le mostrara la lista de candidatos a elejir
+                        Console.WriteLine("Acontinuacion se le mostrara de nuevo en pantalla la lista de candidatos");
+                        //Este codigo tiene como funcion hacer que la consola haga una pausa antes de mostrar el siguiente codigo
+                        Thread.Sleep(2000);
+
+                        //En este codigo se le informara al usuario como debe ingresar el nombre dell candidato por el que votara
+                        Console.WriteLine("Por favor elija su candidato a votar escribiendo tal y como se muestra en pantalla el candidato y numero");
+                        //Este codigo tiene como funcion hacer que la consola haga una pausa antes de mostrar el siguiente codigo
+                        Thread.Sleep(2000);
+
+                        //En este codigo se mostraran los candidatos y a un lado su variable
+                        Console.WriteLine("\t candidato1 \t candidato 2 \t candidato 3 \t candiadto 4 \t candidato 5");
+                        candidato = Console.ReadLine().Trim();
+                        //Sirve para mostrar en consola
+                        Console.WriteLine("Quiere volver a votar: SI o NO");
+                        //Sirve para que el resultado se guarde en la variable y la condicion haga su trabajo
+                        condicionWhile = Console.ReadLine();
+
+                    }
+                    while (condicionWhile == "SI" || condicionWhile == "Si" || condicionWhile == "si")
+                    {
+
+                        //En este codigo se le avisara que acontinuacion se le mostrara la lista de candidatos a elejir
+                        Console.WriteLine("Acontinuacion se le mostrara de nuevo en pantalla la lista de candidatos");
+                        //Este codigo tiene como funcion hacer que la consola haga una pausa antes de mostrar el siguiente codigo
+                        Thread.Sleep(2000);
+
+                        //En este codigo se le informara al usuario como debe ingresar el nombre dell candidato por el que votara
+                        Console.WriteLine("Por favor elija su candidato a votar escribiendo tal y como se muestra en pantalla el candidato y numero");
+                        //Este codigo tiene como funcion hacer que la consola haga una pausa antes de mostrar el siguiente codigo
+                        Thread.Sleep(2000);
+
+                        //En este codigo se mostraran los candidatos y a un lado su variable
+                        Console.WriteLine("\t candidato1 \t candidato 2 \t candidato 3 \t candiadto 4 \t candidato 5");
+                        candidato = Console.ReadLine().Trim();
+                        //Sirve para mostrar en consola
+                        Console.WriteLine("Quiere volver a votar: SI o NO");
+                        //Sirve para que el resultado se guarde en la variable y la condicion haga su trabajo
+                        condicionWhile = Console.ReadLine();
+
+                    }
+                    while (condicionWhile == "SI" || condicionWhile == "Si" || condicionWhile == "si")
+                    {
+
+                        //En este codigo se le avisara que acontinuacion se le mostrara la lista de candidatos a elejir
+                        Console.WriteLine("Acontinuacion se le mostrara de nuevo en pantalla la lista de candidatos");
+                        //Este codigo tiene como funcion hacer que la consola haga una pausa antes de mostrar el siguiente codigo
+                        Thread.Sleep(2000);
+
+                        //En este codigo se le informara al usuario como debe ingresar el nombre dell candidato por el que votara
+                        Console.WriteLine("Por favor elija su candidato a votar escribiendo tal y como se muestra en pantalla el candidato y numero");
+                        //Este codigo tiene como funcion hacer que la consola haga una pausa antes de mostrar el siguiente codigo
+                        Thread.Sleep(2000);
+
+                        //En este codigo se mostraran los candidatos y a un lado su variable
+                        Console.WriteLine("\t candidato1 \t candidato 2 \t candidato 3 \t candiadto 4 \t candidato 5");
+                        candidato = Console.ReadLine().Trim();
+                        //Sirve para mostrar en consola
+                        Console.WriteLine("Quiere volver a votar: SI o NO");
+                        //Sirve para que el resultado se guarde en la variable y la condicion haga su trabajo
+                        condicionWhile = Console.ReadLine();
+
+                    }
+                    while (condicionWhile == "SI" || condicionWhile == "Si" || condicionWhile == "si")
+                    {
+
+                        //En este codigo se le avisara que acontinuacion se le mostrara la lista de candidatos a elejir
+                        Console.WriteLine("Acontinuacion se le mostrara de nuevo en pantalla la lista de candidatos");
+                        //Este codigo tiene como funcion hacer que la consola haga una pausa antes de mostrar el siguiente codigo
+                        Thread.Sleep(2000);
+
+                        //En este codigo se le informara al usuario como debe ingresar el nombre dell candidato por el que votara
+                        Console.WriteLine("Por favor elija su candidato a votar escribiendo tal y como se muestra en pantalla el candidato y numero");
+                        //Este codigo tiene como funcion hacer que la consola haga una pausa antes de mostrar el siguiente codigo
+                        Thread.Sleep(2000);
+
+                        //En este codigo se mostraran los candidatos y a un lado su variable
+                        Console.WriteLine("\t candidato1 \t candidato 2 \t candidato 3 \t candiadto 4 \t candidato 5");
+                        candidato = Console.ReadLine().Trim();
+                        //Sirve para mostrar en consola
+                        Console.WriteLine("Quiere volver a votar: SI o NO");
+                        //Sirve para que el resultado se guarde en la variable y la condicion haga su trabajo
+                        condicionWhile = Console.ReadLine();
+
+                    }
+                    while (condicionWhile == "SI" || condicionWhile == "Si" || condicionWhile == "si")
+                    {
+
+                        //En este codigo se le avisara que acontinuacion se le mostrara la lista de candidatos a elejir
+                        Console.WriteLine("Acontinuacion se le mostrara de nuevo en pantalla la lista de candidatos");
+                        //Este codigo tiene como funcion hacer que la consola haga una pausa antes de mostrar el siguiente codigo
+                        Thread.Sleep(2000);
+
+                        //En este codigo se le informara al usuario como debe ingresar el nombre dell candidato por el que votara
+                        Console.WriteLine("Por favor elija su candidato a votar escribiendo tal y como se muestra en pantalla el candidato y numero");
+                        //Este codigo tiene como funcion hacer que la consola haga una pausa antes de mostrar el siguiente codigo
+                        Thread.Sleep(2000);
+
+                        //En este codigo se mostraran los candidatos y a un lado su variable
+                        Console.WriteLine("\t candidato1 \t candidato 2 \t candidato 3 \t candiadto 4 \t candidato 5");
+                        candidato = Console.ReadLine().Trim();
+                        //Sirve para mostrar en consola
+                        Console.WriteLine("Quiere volver a votar: SI o NO");
+                        //Sirve para que el resultado se guarde en la variable y la condicion haga su trabajo
+                        condicionWhile = Console.ReadLine();
+
+                    }
+                    while (condicionWhile == "SI" || condicionWhile == "Si" || condicionWhile == "si")
+                    {
+
+                        //En este codigo se le avisara que acontinuacion se le mostrara la lista de candidatos a elejir
+                        Console.WriteLine("Acontinuacion se le mostrara de nuevo en pantalla la lista de candidatos");
+                        //Este codigo tiene como funcion hacer que la consola haga una pausa antes de mostrar el siguiente codigo
+                        Thread.Sleep(2000);
+
+                        //En este codigo se le informara al usuario como debe ingresar el nombre dell candidato por el que votara
+                        Console.WriteLine("Por favor elija su candidato a votar escribiendo tal y como se muestra en pantalla el candidato y numero");
+                        //Este codigo tiene como funcion hacer que la consola haga una pausa antes de mostrar el siguiente codigo
+                        Thread.Sleep(2000);
+
+                        //En este codigo se mostraran los candidatos y a un lado su variable
+                        Console.WriteLine("\t candidato1 \t candidato 2 \t candidato 3 \t candiadto 4 \t candidato 5");
+                        candidato = Console.ReadLine().Trim();
+                        //Sirve para mostrar en consola
+                        Console.WriteLine("Quiere volver a votar: SI o NO");
+                        //Sirve para que el resultado se guarde en la variable y la condicion haga su trabajo
+                        condicionWhile = Console.ReadLine();
+
+                    }
+                }
+            }
+            #endregion
+
+            //sirve para aprobra el numero colocado
+            if (numero <= 0)
+            {
+                //muestra un mensaje en consola
+                Console.WriteLine("Presione la tecla 0 para ver la lista de candidatos y sus votos y presione ENTER dos veces para continuar");
+                Console.Read();
+            }
+            else
+            {
+                //en este apartado se le infoma al usuario que ah presionado la tecla incorrecta
+                Console.WriteLine("Usted ah presionado la tecla incorrecta, vuelva a realizar el proceso");
+                //Este codigo sirve para que la consola haga una pausa
+                Thread.Sleep(2000);
+                //Este codigo sirve para que despues de que le aparezca al usuaio el error que cometio lo saque del sistema
+                return;
+            }
+            Console.ReadKey();
+
+
+
+            //Sirve para mostrar en consola la lista de candidatos junto a sus votos
+            Console.WriteLine("La lista de votantes es la siguiente:");
+            Console.WriteLine("Los votos del candidato 1 son: {0} voto(s) ", candidato1);
+            Console.WriteLine("Los votos del candidato 2 son: {0} voto(s) ", candidato2);
+            Console.WriteLine("Los votos del candidato 3 son: {0} voto(s) ", candidato3);
+            Console.WriteLine("Los votos del candidato 4 son: {0} voto(s) ", candidato4);
+            Console.WriteLine("Los votos del candidato 5 son: {0} voto(s) ", candidato5);
+            Thread.Sleep(5000);
+
+            //Este codigo sirve para mostrarle unn mensaje al usuario en consola
+            Console.WriteLine("Muchas gracias por votar");
+            //Este codigo sirve para que la cnsola hagab una pausa 
+            Thread.Sleep(1000);
+
+            //Este codigo sirve para mostrarle al usuario que esta saliendo del sistema
+            Console.WriteLine("Saliendo del sistema...");
+            //Este codigo sirve para que la consola realize una pausa
+            Thread.Sleep(2000);
+            //Este codigo sirve para mostrarle al usuario que esta saliendo del sistema
+            Console.WriteLine("Saliendo del sistema....");
+            //Este codigo sirve para que la consola realize una pausa
+            Thread.Sleep(2000);
+            //Este codigo sirve para mostrarle al usuario que esta saliendo del sistema
+            Console.WriteLine("Saliendo del sistema.....");
+            //Este codigo sirve para que la consola realize una pausa
+            Thread.Sleep(2000);
+            //Este codigo sirve para mostrarle al usuario que esta saliendo del sistema
+            Console.WriteLine("Saiendo del sistema......");
+            //Este codigo sirve para que la consola realize una pausa
+            Thread.Sleep(2000);
+            
+        }
+    }
+}
